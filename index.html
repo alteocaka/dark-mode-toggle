@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Dark/Light Mode Toggle</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Light / Dark Mode</h1>
+      <div class="toggle-container">
+        <input type="checkbox" id="switch" name="theme" /><label for="switch"
+          >Toggle</label
+        >
+      </div>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit
+        accusantium maxime sequi quam provident commodi deserunt deleniti nisi
+        cum soluta. Porro, hic exercitationem doloremque nostrum ab ex
+        repellendus unde fugit ut possimus quia blanditiis molestias aliquid sit
+        aut, tenetur architecto perferendis voluptate commodi earum provident
+        natus vero beatae tempora! Vel.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p>alteocaka <img src="./img/heart-49-16.png" /></p>
+    </div>
+
+    <script>
+      var checkbox = document.querySelector("input[name=theme]");
+
+      checkbox.addEventListener("change", function () {
+        if (this.checked) {
+          trans();
+          document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+          trans();
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      });
+
+      let trans = () => {
+        document.documentElement.classList.add("transition");
+        window.setTimeout(() => {
+          document.documentElement.classList.remove("transition");
+        }, 1000);
+      };
+    </script>
+  </body>
+</html>
